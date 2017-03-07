@@ -22,6 +22,10 @@ Timer kollision;
 					Var.bally = Var.screenheight/2 - 10;
 					Var.balldirx = -1;
 					Var.playerpoints += 1;
+					if (Var.playerpoints==3){
+						new GameOverGui();
+						Var.winner = "Player1";
+					}
 				}
 				if (Var.ballx <= 0){
 					Var.ballx = Var.screenwidth/2 - 10;
