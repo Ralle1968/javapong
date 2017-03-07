@@ -30,8 +30,6 @@ public class DrawGameOver extends JLabel {
 		
 		g.setFont(Var.myFont);
 		
-		g.drawString("Game Over", 250, 400);
-		
 		g.drawString("Winner: " + Var.winner, 250, 500);
 		
 		repaint();

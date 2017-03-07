@@ -25,6 +25,7 @@ Timer kollision;
 					if (Var.playerpoints==3){
 						new GameOverGui();
 						Var.winner = "Player1";
+						Var.title = "Game Over";
 					}
 				}
 				if (Var.ballx <= 0){
@@ -32,6 +33,11 @@ Timer kollision;
 					Var.bally = Var.screenheight/2 - 10;
 					Var.balldirx = 1;
 					Var.gegnerpoints += 1;
+					if (Var.gegnerpoints==3){
+						new GameOverGui();
+						Var.winner = "Computer";
+						Var.title = "Game Over";
+					}
 				}
 				if (Var.ballx < Var.x+25 && Var.ballx > Var.x && Var.bally-20 < Var.y+150 && Var.bally > Var.y) {
 					Var.balldirx = 1;
