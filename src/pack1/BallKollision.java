@@ -35,6 +35,7 @@ Timer kollision;
 					Var.gegnerpoints += 1;
 					if (Var.gegnerpoints==3){
 						new GameOverGui();
+						Var.jf1.dispose();
 						Var.winner = "Computer";
 						Var.title = "Game Over";
 					}
