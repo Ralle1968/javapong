@@ -24,9 +24,9 @@ public class Var {
 	
 	public Var() {
 		try {
-			pixelfont = Font.createFont(Font.TRUETYPE_FONT, new File("coders_crux.ttf")).deriveFont(125f);
+			pixelfont = Font.createFont(Font.TRUETYPE_FONT, new File("resources/fonts/coders_crux.ttf")).deriveFont(125f);
 			GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
-			ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File("coders_crux.ttf")));
+			ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, getClass().getClassLoader().getResourceAsStream("fonts/coders_crux.ttf")));
 		} catch (FontFormatException | IOException e) {
 			
 			e.printStackTrace();
