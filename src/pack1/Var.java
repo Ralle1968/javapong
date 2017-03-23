@@ -3,8 +3,6 @@ package pack1;
 import java.awt.Font;
 import java.awt.FontFormatException;
 import java.awt.GraphicsEnvironment;
-import java.io.BufferedInputStream;
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 
@@ -26,11 +24,10 @@ public class Var {
 	
 	public Var() {
 		try {
-			InputStream myStream = new BufferedInputStream(new FileInputStream("src/pack1/coders_crux.ttf"));
-			pixelfont = Font.createFont(Font.TRUETYPE_FONT, myStream).deriveFont(125f);
-			//pixelfont = Font.createFont(Font.TRUETYPE_FONT, new File("src/fonts/coders_crux.ttf")).deriveFont(125f);
+			InputStream mystream = this.getClass().getClassLoader().getResourceAsStream("pack1/resources/coders_crux.ttf");
+			pixelfont = Font.createFont(Font.TRUETYPE_FONT, mystream).deriveFont(125f);
 			GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
-			ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, getClass().getClassLoader().getResourceAsStream("pack1/coders_crux.ttf")).deriveFont(125f));
+			ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, getClass().getClassLoader().getResourceAsStream("pack1/resources/coders_crux.ttf")).deriveFont(125f));
 		} catch (FontFormatException | IOException e) {
 			
 			e.printStackTrace();
